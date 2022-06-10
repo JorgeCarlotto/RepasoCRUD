@@ -13,6 +13,10 @@ module.exports ={
     },
     crear:function(req, res, next){
         res.render('libros/crear')
+    },
+
+    guardar:function(req, res, next){
+        res.send(req.body);
     }
 
 
