@@ -10,6 +10,9 @@ module.exports ={
             res.render('libros/index',{tittle :"Aplicación",libros:datos});
         })
 
+    },
+    crear:function(req, res, next){
+        res.render('libros/crear')
     }
 
 
