@@ -1,13 +1,17 @@
 var con = require('../config/conexion');
+var libro =require('../model/libro')
 
 module.exports ={
 
     index:function(req, res, next){
 
-        con.query("SELECT * FROM Libros",function(err,datos){
+        libro.obtener(con, function(err,datos){
             console.log(datos);
+            res.render('libros/index',{tittle :"Aplicación",libros:datos});
         })
-        res.render('libros/index', { title: 'Express' });
+
     }
+
+
 
 }
