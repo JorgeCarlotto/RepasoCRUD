@@ -16,7 +16,14 @@ module.exports ={
     },
 
     guardar:function(req, res, next){
-        res.send(req.body);
+        console.log(req.body);
+        console.log(req.file.filename);
+        libro.insertar(con,req.body, function(err){
+             res.redirect('/libros');
+            
+        })
+        
+    
     }
 
 
